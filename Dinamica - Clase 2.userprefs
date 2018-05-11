@@ -1,0 +1,17 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EnemyMovementController.cs">
+    <Files>
+      <File FileName="Assets\Scripts\EnemyMovementController.cs" Line="31" Column="10" />
+      <File FileName="Assets\Scripts\MovementController.cs" Line="36" Column="59" />
+      <File FileName="Assets\Scripts\PlayerMovementController.cs" Line="5" Column="59" />
+      <File FileName="Assets\Scripts\Singleton.cs" Line="16" Column="1" />
+      <File FileName="Assets\Scripts\GroundCheck.cs" Line="6" Column="2" />
+      <File FileName="Assets\Scripts\Layers.cs" Line="7" Column="25" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

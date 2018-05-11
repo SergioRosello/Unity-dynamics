@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dinamica - Clase 3", "Assembly-CSharp.csproj", "{F347371C-2021-F22D-5DAF-91FA713F0E54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dinamica - Clase 3", "Assembly-CSharp-firstpass.csproj", "{A49EF8E6-0F4F-30A7-811A-E190BFE02F2F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F347371C-2021-F22D-5DAF-91FA713F0E54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F347371C-2021-F22D-5DAF-91FA713F0E54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F347371C-2021-F22D-5DAF-91FA713F0E54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F347371C-2021-F22D-5DAF-91FA713F0E54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A49EF8E6-0F4F-30A7-811A-E190BFE02F2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A49EF8E6-0F4F-30A7-811A-E190BFE02F2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A49EF8E6-0F4F-30A7-811A-E190BFE02F2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A49EF8E6-0F4F-30A7-811A-E190BFE02F2F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

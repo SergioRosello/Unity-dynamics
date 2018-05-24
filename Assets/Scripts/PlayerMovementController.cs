@@ -61,12 +61,8 @@ public class PlayerMovementController : MovementController {
             shootPressTime += Time.deltaTime;
         }
         else if (Input.GetKeyUp(KeyCode.Q)) {
-            // Calcular cuánto tengo que saltar en función a ese tiempo
             var percentStrength = Mathf.Clamp(shootPressTime, MinShootPercent, 1);
-            //Debug.Log("percentStrength: " + percentStrength);
-            Debug.Log("MaxCannonBallStrength before: " + maxCannonBallForce);
             maxCannonBallForce *= percentStrength;
-            Debug.Log("MaxCannonBallStrength after: " + maxCannonBallForce);
             ShootCannonBall();
         }
     }

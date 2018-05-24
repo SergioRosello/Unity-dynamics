@@ -6,12 +6,15 @@ public class PlayerMovementController : MovementController {
 	public GameObject BombPrefab;
     protected float baseAcceleration;
     protected float baseDeceleration;
+    protected float shootPressTime = 0;
     protected Vector3 movementForward;
     [Range(0.0f, 1.0f)]
     public float AccelerationJumpReducer;
     [Range(0.0f, 1.0f)]
     public float DecelerationJumpReducer;
-    public float cannonBallForce;
+    public float maxCannonBallForce;
+    private float tmpMaxCannonBallForce;
+    public float MinShootPercent = .4f;
 
 
     protected override Vector2 GetDesiredMovement () {
@@ -32,6 +35,7 @@ public class PlayerMovementController : MovementController {
     protected override void Awake()
     {
         base.Awake();
+        tmpMaxCannonBallForce = maxCannonBallForce;
         baseAcceleration = Acceleration;
         baseDeceleration = Deceleration;
     }
@@ -52,15 +56,30 @@ public class PlayerMovementController : MovementController {
             Deceleration *= DecelerationJumpReducer;
         }
 
-
-		if (Input.GetKeyDown (KeyCode.Q)) {
-			var go = Instantiate (BombPrefab, transform.position, Quaternion.identity);
-            // Disparar la bomba hacia donde estoy mirando
-            go.GetComponent<Rigidbody>().AddForce(transform.forward * cannonBallForce, ForceMode.VelocityChange);
+        //Shoot cannon ball based on input time pressed
+        if (Input.GetKey(KeyCode.Q)) {
+            shootPressTime += Time.deltaTime;
+        }
+        else if (Input.GetKeyUp(KeyCode.Q)) {
+            // Calcular cuánto tengo que saltar en función a ese tiempo
+            var percentStrength = Mathf.Clamp(shootPressTime, MinShootPercent, 1);
+            //Debug.Log("percentStrength: " + percentStrength);
+            Debug.Log("MaxCannonBallStrength before: " + maxCannonBallForce);
+            maxCannonBallForce *= percentStrength;
+            Debug.Log("MaxCannonBallStrength after: " + maxCannonBallForce);
+            ShootCannonBall();
         }
     }
 
-    protected override void LateUpdate() {
+    protected void ShootCannonBall() {
+        var go = Instantiate(BombPrefab, transform.position, Quaternion.identity);
+        // Disparar la bomba hacia donde estoy mirando
+        go.GetComponent<Rigidbody>().AddForce(transform.forward * maxCannonBallForce, ForceMode.VelocityChange);
+        shootPressTime = 0;
+        maxCannonBallForce = tmpMaxCannonBallForce;
+    }
+
+    protected void LateUpdate() {
         _anim.SetFloat("MoveSpeed", _input.magnitude);
     }
 }

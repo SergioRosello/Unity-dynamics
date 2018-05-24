@@ -64,7 +64,7 @@ public class EnemyMovementController : MovementController {
         return new Vector2(_rb.velocity.x, _rb.velocity.z);
     }
 
-    protected override void LateUpdate() {
+    protected void LateUpdate() {
         var horizontalMovement = new Vector3(_input.x, 0, _input.y);
         transform.LookAt(transform.position + horizontalMovement, Vector3.up);
         _anim.SetFloat("MoveSpeed", _input.magnitude);

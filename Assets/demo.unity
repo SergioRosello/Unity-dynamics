@@ -1099,6 +1099,16 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114332306312553020, guid: 6e7535e925e40d44c9ce92a9975f335e,
+        type: 2}
+      propertyPath: timeTillFall
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114332306312553020, guid: 6e7535e925e40d44c9ce92a9975f335e,
+        type: 2}
+      propertyPath: timeTillReset
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e7535e925e40d44c9ce92a9975f335e, type: 2}
   m_IsPrefabParent: 0

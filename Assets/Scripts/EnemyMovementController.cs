@@ -77,4 +77,16 @@ public class EnemyMovementController : MovementController {
 			}
 		}
 	}
+
+    private void OnCollisionEnter(Collision collision)
+    {
+
+    }
+    private void OnTriggerEnter(Collider other) {
+        if (other.tag == "Player") {
+            Debug.Log("Esto si que ha funcionado!");
+            other.GetComponent<Health>().Lives--;
+            
+        }
+    }
 }

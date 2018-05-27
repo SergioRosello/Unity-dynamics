@@ -8,4 +8,5 @@ public class Layers {
 	public const int Enemies = 10;
 	public const int Bombs = 11;
 	public const int MovingPlatforms = 12;
+    public const int PlayerGroundCheck = 13;
 }

@@ -314,6 +314,7 @@
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Cannon.cs" />
     <Compile Include="Assets\Scripts\EnemyAgent.cs" />
+    <Compile Include="Assets\Scripts\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\EnemyMovementController.cs" />
     <Compile Include="Assets\Scripts\ExplosiveCannonBall.cs" />
     <Compile Include="Assets\Scripts\GroundCheck.cs" />

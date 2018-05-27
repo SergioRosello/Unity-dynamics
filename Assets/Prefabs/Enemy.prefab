@@ -3438,7 +3438,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1738427854852264}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f70acd08ae2133b44905b2e90dab3cf8, type: 3}
   m_Name: 
@@ -3464,7 +3464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a61102872f853ca4f9ed4f363ba7d2d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ForceToImpulsePlayerWithWhenKillsMe: 16.61
+  ForceToImpulsePlayerWithWhenKillsMe: 10
 --- !u!114 &114706438517343758
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3501,9 +3501,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 1.7
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.15, z: 0}
 --- !u!137 &137106177358875464
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

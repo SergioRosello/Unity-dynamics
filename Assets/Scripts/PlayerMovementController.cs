@@ -15,6 +15,10 @@ public class PlayerMovementController : MovementController {
     public float maxCannonBallForce;
     private float tmpMaxCannonBallForce;
     public float MinShootPercent = .4f;
+    public int maxNumberOfFollowedJumps;
+    private int numberOfFollowedJumps;
+    public float maxJumpTimer;
+    private float jumpTimer;
 
 
     protected override Vector2 GetDesiredMovement () {
@@ -38,6 +42,8 @@ public class PlayerMovementController : MovementController {
         tmpMaxCannonBallForce = maxCannonBallForce;
         baseAcceleration = Acceleration;
         baseDeceleration = Deceleration;
+        jumpTimer = maxJumpTimer;
+        numberOfFollowedJumps = 0;
     }
 
     protected override void Update() {
@@ -45,10 +51,32 @@ public class PlayerMovementController : MovementController {
 
         Acceleration = baseAcceleration;
         Deceleration = baseDeceleration;
-        if (Input.GetKeyDown (KeyCode.Space) && _groundCheck.Grounded) {
-			// Salto
-			_rb.AddForce(Vector3.up * JumpForce, ForceMode.VelocityChange);
+
+        // Salto
+        if (Input.GetKeyDown(KeyCode.Space) && _groundCheck.Grounded) {
+            _rb.AddForce(Vector3.up * JumpForce, ForceMode.VelocityChange);
+            numberOfFollowedJumps = 1;
+        //Cuando ya he tocado el suelo y ha presionado el boton de salto hace menos de maxJumpTimer tiempo
+        } else if (_groundCheck.Grounded && jumpTimer <= maxJumpTimer) {
+            var jumpMultiplier = 1 + numberOfFollowedJumps * .2f;
+            Debug.Log("Jump multiplier: " + jumpMultiplier);
+            _rb.AddForce(Vector3.up * JumpForce * jumpMultiplier, ForceMode.VelocityChange);
+            // Vamos acumulando el numero de veces que hemos saltado
+            // Hasta llegar a maxNumberOfFollowedJumps
+            if (numberOfFollowedJumps >= maxNumberOfFollowedJumps) numberOfFollowedJumps = 1;
+            else numberOfFollowedJumps++;
+            // Volvemos a asignar a jumpTimer el maximo, para que
+            // para volver a entrar en el salto larago tenga que
+            // presionar la tecla de salto en el aire
+            jumpTimer = maxJumpTimer;
+        // Si presiona la tecla de salto antes de que llegue al suelo
+        } else if (Input.GetKeyDown(KeyCode.Space) && !_groundCheck.Grounded) {
+            // Empezamos a contar
+            jumpTimer = 0;
         }
+        jumpTimer += Time.deltaTime;
+
+        // Cuando esta en el aire
         if (!_groundCheck.Grounded) {
             Debug.Log("Jumping...");
             // Cambio de aceleracion-deceleracion en el aire

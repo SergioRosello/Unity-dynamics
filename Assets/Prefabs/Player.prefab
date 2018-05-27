@@ -947,7 +947,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1025216991445856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 295.39, y: 5.18, z: 264}
+  m_LocalPosition: {x: 237.31, y: 1.2, z: 226.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4278025259522986}
@@ -1301,13 +1301,14 @@ MonoBehaviour:
   JumpForce: 12
   directionForward: {x: 0, y: 0, z: 0}
   directionRight: {x: 0, y: 0, z: 0}
+  friction: 0.01
   BombPrefab: {fileID: 1794295447074896, guid: 49d43bc21563d9f4abfee9b87e293cf3, type: 2}
   AccelerationJumpReducer: 0.018
   DecelerationJumpReducer: 0.009
   maxCannonBallForce: 50
   MinShootPercent: 0.4
-  maxNumberOfFollowedJumps: 4
-  maxJumpTimer: 1
+  maxNumberOfFollowedJumps: 3
+  maxJumpTimer: 0.5
 --- !u!114 &114037952409778564
 MonoBehaviour:
   m_ObjectHideFlags: 1

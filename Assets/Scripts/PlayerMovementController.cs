@@ -106,4 +106,10 @@ public class PlayerMovementController : MovementController {
     protected void LateUpdate() {
         _anim.SetFloat("MoveSpeed", _input.magnitude);
     }
+
+    private void OnTriggerEnter(Collider other) {
+        if(other.gameObject.layer == Layers.SlipperyPlatform) {
+            
+        }
+    }
 }

@@ -15,6 +15,8 @@ public abstract class MovementController : MonoBehaviour
     public float JumpForce = 12;
     public Vector3 directionForward;
     public Vector3 directionRight;
+    [Range(0.0f, 1.0f)]
+    public float friction;
 
 
     // Use this for initialization

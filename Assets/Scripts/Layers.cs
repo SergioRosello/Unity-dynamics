@@ -9,4 +9,5 @@ public class Layers {
 	public const int Bombs = 11;
 	public const int MovingPlatforms = 12;
     public const int PlayerGroundCheck = 13;
+    public const int SlipperyPlatform = 14;
 }
